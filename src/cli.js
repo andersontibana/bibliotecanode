@@ -4,11 +4,11 @@ import fs from 'fs';
 import listaValidada from './http-validacao.js';
 
 const caminho = process.argv;
-function imprimeLista(valida ,resultado, nomeDeArquivo = ''){
+async function imprimeLista(valida ,resultado, nomeDeArquivo = ''){
     if(valida) {
         console.log(chalk.yellow("lista validada"), 
         chalk.magenta(nomeDeArquivo), 
-        listaValidada(resultado))
+        await listaValidada(resultado))
     }
     else{
         console.log(chalk.yellow("lista de links do arquivo"), 
